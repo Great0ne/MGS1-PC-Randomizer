@@ -49,4 +49,4 @@ Feel free to report any encountered issues.
 Credits to Denezhou on the fearlessrevolution forums for the MGS1 CheatTable which made me gain a lot of time.
 
 # Disclaimer
-This is not commercial project. It is not affilated with Konami. It doesnt endorse piracy in any form. You need to own a PC version of the game to play this mod. All copyrighted content belongs to their respective owners and may not be illegally distributed.
+This is not a commercial project. It is not affilated with Konami. It doesnt endorse piracy in any form. You need to own a PC version of the game to play this mod. All copyrighted content belongs to their respective owners and may not be illegally distributed.
