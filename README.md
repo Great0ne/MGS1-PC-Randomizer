@@ -16,7 +16,7 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
   The bomb is received with a timer randomizer from 3 to 10 seconds.
   The ID Card is received with it's level randomized from 1 to 7, but will be reset to expected value while progressing the story. 
 - Textbox 
-  Also, I tried to use the ingame text to display the new item instead of the old, it was working until boss fights where the game crash,
+  I tried to use the ingame text to display the new item instead of the old, it was working until boss fights where the game crash,
   sadly too much code on the update so I added a textbox which you can move around that will display new items, 
   not a fan of adding visual elements but it is better than checking your inventory every time.
   
