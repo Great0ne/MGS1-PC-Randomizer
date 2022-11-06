@@ -26,27 +26,22 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
   
 # Issues
 - Balancing, 
-
-  There is a 1 out of 2 chance to get item or weapon, which could cause a lack of items with bad luck.
+  there is a 1 out of 2 chance to get item or weapon, which could cause a lack of items with bad luck.
 - Max Ammo,
-
   seems like the code set to increment max ammo is overridden by the game, don't be surprised to see 4/3 rations and sorts.
 - ID Card,
-
-  Can cause glitches if used at high level too early.
+  can cause glitches if used at high level too early.
 - Cardboard Box,
-
-  Can cause softlock if used without the needed ID card level, like the Box C to teleport to Snowfield where you need a level 6 ID Card.
+  can cause softlock if used without the needed ID card level, like the Box C to teleport to Snowfield where you need a level 6 ID Card.
 - Walls and C4,
-
-  If the player have no C4 to destroy walls, know that you can destroy them with Stinger too, or go back pick up reappeared items.
+  if the player have no C4 to destroy walls, know that you can destroy them with Stinger too, or go back pick up reappeared items.
 - Wolf's ambush to Meryl,
-  If the player has already PSG1, then the fight with Wolf will trigger with Meryl on the ground without the possibility to go back,
+  if the player has already PSG1, then the fight with Wolf will trigger with Meryl on the ground without the possibility to go back,
   so keeping PSG1/Stinger/Nikita ammo is advised.
-- Pal Key, (FIXED)
-  If got randomly before needed, then the rat drop will give it to a null state, fixed it.
-- Escape Rations, (FIXED)
-  Picking up rations during escape caused crash if an item was given instead, added code to fix it.
+- Pal Key (FIXED),
+  if got randomly before needed, then the rat drop will give it to a null state, fixed it.
+- Escape Rations (FIXED),
+  picking up rations during escape caused crash if an item was given instead, added code to fix it.
 
 # Credits
 Credits to Denezhou on the fearlessrevolution forums for the MGS1 CheatTable which made me gain a lot of time.
