@@ -6,6 +6,8 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
 - Can be activated/deactivated anytime.
 
 ![mgsr1](https://user-images.githubusercontent.com/110473739/200180648-4c2b8633-8f7b-48a2-81da-f4322025265c.gif)
+![mgsr2](https://user-images.githubusercontent.com/110473739/200182692-f0dfad0f-b495-404f-a05a-645a73f4fdd7.gif)
+![mgsr3](https://user-images.githubusercontent.com/110473739/200182695-faac1141-7db9-4afc-8ffb-4af3d2e306ff.gif)
 
 # Randomizing what and how ?
 - This Randomizer will randomize Items and Weapons for every pickup according to the player's belongings.
