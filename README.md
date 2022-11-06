@@ -27,6 +27,8 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
 # Issues
 - Balancing, 
   There is a 1 out of 2 chance to get item or weapon, which could cause a lack of items with bad luck.
+- Max Ammo,
+  seems like the code set to increment max ammo is overridden by the game, don't be surprised to see 4/3 rations and sorts.
 - ID Card,
   Can cause glitches if used at high level too early.
 - Cardboard Box,
