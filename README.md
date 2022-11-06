@@ -43,5 +43,10 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
 - Escape Rations (FIXED),
   picking up rations during escape caused crash if an item was given instead, added code to fix it.
 
+Feel free to report any encountered issues.
+
 # Credits
 Credits to Denezhou on the fearlessrevolution forums for the MGS1 CheatTable which made me gain a lot of time.
+
+# Disclaimer
+This is not commercial project. It is not affilated with Konami. It doesnt endorse piracy in any form. You need to own a PC version of the game to play this mod. All copyrighted content belongs to their respective owners and may not be illegally distributed.
