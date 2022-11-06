@@ -4,8 +4,6 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
 # How to use
 - Launch the game, launch the Trainer, click Randomize and test it.
 - Can be activated/deactivated anytime.
-- 
-![mgsr1](https://user-images.githubusercontent.com/110473739/200180573-06b69521-f4fb-4919-9731-963ec2014e4a.gif)
 
 # Randomizing what and how ?
 - This Randomizer will randomize Items and Weapons for every pickup according to the player's belongings.
