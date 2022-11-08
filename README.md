@@ -10,6 +10,7 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
 ![mgsr3](https://user-images.githubusercontent.com/110473739/200182695-faac1141-7db9-4afc-8ffb-4af3d2e306ff.gif)
 
 # Randomizing what and how ?
+Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if it can make people play a bit more at this gem of a game then it's a job done.
 - This Randomizer will randomize Items and Weapons for every pickup according to the player's belongings.
 - For the CheatEngine choice, which will modify game data during gameplay, 
   it is mostly because I wanted to make a quick and simple launcher to make and use without the need of too much external components.
