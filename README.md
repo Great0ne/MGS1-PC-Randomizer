@@ -27,7 +27,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   
 # Issues
 - Balancing, 
-  there is a 1 out of 2 chance to get item or weapon, which could cause a lack of items with bad luck.
+  there is a 1 out of 2 chances to get item or weapon, which could cause a lack of items with bad luck.
 - Max Ammo,
   seems like the code set to increment max ammo is overridden by the game, don't be surprised to see 4/3 rations and sorts.
 - ID Card,
@@ -39,10 +39,10 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
 - Wolf's ambush to Meryl,
   if the player has already PSG1, then the fight with Wolf will trigger with Meryl on the ground without the possibility to go back,
   so keeping PSG1/Stinger/Nikita ammo is advised.
-- Pal Key (FIXED),
-  if got randomly before needed, then the rat drop will give it to a null state, fixed it.
-- Escape Rations (FIXED),
-  picking up rations during escape caused crash if an item was given instead, added code to fix it.
+- (FIXED) Pal Key,
+  if got randomly before needed, then the rat drop will give it to a null state.
+- (FIXED) Escape Rations,
+  picking up rations during escape caused crash if an item was given instead.
 
 Feel free to report any encountered issues.
 
