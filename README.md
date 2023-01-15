@@ -43,6 +43,9 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   if got randomly before needed, then the rat drop will give it to a null state.
 - (FIXED) Escape Rations,
   picking up rations during escape caused crash if an item was given instead.
+- Display Ingame Pickup,
+  added temporary solution to display randomized pickup with movable transparent window, original ingame display causes crashes
+  during boss fights.
 
 Feel free to report any encountered issues.
 
