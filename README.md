@@ -19,7 +19,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   Knowing that, for each pickup the received item is randomized, first by type Item or Weapon only if the original pickup is unique just to guarantee balancing,
   and given to the player, but if the randomizer item is a Weapon then Ammo is randomized according to their type.
   
-  The bomb is received with a timer randomizer from 3 to 10 seconds.
+  The Bomb is received with a timer randomized from 3 to 10 seconds.
   
   The ID Card is received with it's level randomized from 1 to 7, but will be reset to expected value while progressing the story. 
 - Textbox 
