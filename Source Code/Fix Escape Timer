@@ -1,0 +1,64 @@
+--Start Escape Timer
+--"mgsi.exe"+62581
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+{$luacode }
+if bEscape=="rnd" then bEscape="ration" end
+
+{$asm}
+originalcode:
+mov [mgsi.exe+33381C],eax
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+62581:
+jmp newmem
+returnhere:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"mgsi.exe"+62581:
+mov [mgsi.exe+33381C],eax
+//Alt: db A3 1C 38 73 00
+-----------------------------------------------
+-----------------------------------------------
+--Reset Escape Timer
+--"mgsi.exe"+629C6
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+{$luacode}
+if bEscape=="ration" then bEscape="rnd" end
+
+{$asm}
+originalcode:
+mov eax,[mgsi.exe+33381C]
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+629C6:
+jmp newmem
+returnhere:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"mgsi.exe"+629C6:
+mov eax,[mgsi.exe+33381C]
+//Alt: db A1 1C 38 73 00
