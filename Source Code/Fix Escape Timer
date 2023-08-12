@@ -1,5 +1,5 @@
---Start Escape Timer
---"mgsi.exe"+62581
+//Start Escape Timer
+//"mgsi.exe"+62581
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048)
@@ -29,10 +29,9 @@ dealloc(newmem)
 "mgsi.exe"+62581:
 mov [mgsi.exe+33381C],eax
 //Alt: db A3 1C 38 73 00
------------------------------------------------
------------------------------------------------
---Reset Escape Timer
---"mgsi.exe"+629C6
+//-------------------------------------------
+//Reset Escape Timer
+//"mgsi.exe"+629C6
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048)
