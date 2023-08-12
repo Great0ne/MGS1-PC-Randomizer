@@ -1,0 +1,66 @@
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+{$lua}
+rnd=-1
+rndName=""
+bEscape="rnd"
+
+{$asm}
+newmem:
+
+{$luacode nbci=EAX}
+if syntaxcheck then return end
+
+if bEscape=="ration" then--Escape
+  writeSmallInteger("mgsi.exe+38E844",readSmallInteger("mgsi.exe+38E844")+1)
+  rndName = "Ration"
+end
+if bEscape=="rnd" then--Not Escape
+  math.randomseed(os.time())--Random Seed
+  local list = getAddressList()
+  --RANDOM WEAPON
+  offset = 27--Item Offset+Cigs/Scope+Weapons
+  rnd=math.random(0,9)+offset--0-9
+  local rndAmmo = math.random(2,4)
+  if rnd-offset==0 or rnd-offset==1 then rndAmmo = math.random(2,15) end--Socom/Famas Ammo
+  local wvalue = list[rnd].Value--Current Address Value
+  if rnd~=offset then
+     writeSmallInteger(list[rnd].CurrentAddress,wvalue+rndAmmo)--Set Address Value
+  end
+  --SOCOM Special
+  if rnd==offset then
+     if string.len(list[rnd].Value)>=4 then list[rnd].Value=0 end
+     writeSmallInteger("mgsi.exe+38E802",readSmallInteger("mgsi.exe+38E802")+rndAmmo)
+  end
+  --Max Value Weapons
+  local maxWeapon=41
+  if list[maxWeapon+rnd-offset].Value<list[rnd].Value then
+     list[maxWeapon+rnd-offset].Value=list[rnd].Value end
+  rndName=list[rnd].Description--Set PickUp String
+end
+
+if f then FormPaint(f) end--Call Form
+
+{$asm}
+originalcode:
+//add [eax+mgsi.exe+38E82A],dx
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+4D760:
+jmp newmem
+nop 2
+returnhere:
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"mgsi.exe"+4D760:
+add [eax+mgsi.exe+38E82A],dx
+//Alt: db 66 01 90 2A E8 78 00
