@@ -1,0 +1,64 @@
+--"mgsi.exe"+4D693
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+{$luacode }
+writeSmallInteger("mgsi.exe+38E802",saveW)--Load Socom Value
+writeSmallInteger("mgsi.exe+38E816",saveM)--Load Socom Max
+
+{$asm}
+originalcode:
+mov cx,[eax+mgsi.exe+38E802]
+mov [eax+mgsi.exe+38E802],cx
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+4D693:
+jmp newmem
+nop 2
+returnhere:
+ 
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"mgsi.exe"+4D693:
+mov [eax+mgsi.exe+38E802],cx
+//Alt: db 66 89 88 02 E8 78 00
+---------------------------------
+---------------------------------
+--"mgsi.exe"+4D6A6
+[ENABLE]
+//code from here to '[DISABLE]' will be used to enable the cheat
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem: //this is allocated memory, you have read,write,execute access
+//place your code here
+
+originalcode:
+mov dx,[eax+mgsi.exe+38E802]
+mov [eax+mgsi.exe+38E802],dx
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+4D6A6:
+jmp newmem
+nop 2
+returnhere:
+
+[DISABLE]
+//code from here till the end of the code will be used to disable the cheat
+dealloc(newmem)
+"mgsi.exe"+4D6A6:
+mov [eax+mgsi.exe+38E802],dx
+//Alt: db 66 89 90 02 E8 78 00
