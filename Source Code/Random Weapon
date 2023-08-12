@@ -1,4 +1,4 @@
---"mgsi.exe"+4D662
+//"mgsi.exe"+4D662
 [ENABLE]
 //code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048)
