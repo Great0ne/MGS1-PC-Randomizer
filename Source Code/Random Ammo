@@ -1,0 +1,61 @@
+--"mgsi.exe"+4D6E1
+[ENABLE]
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+{$luacode }
+if syntaxcheck then return end
+
+math.randomseed(os.time())--Random Seed
+local list = getAddressList()
+--RANDOM WEAPON--
+ch=2
+local offset = 27--Item Offset+Cigs/Scope+Weapons
+rnd=math.random(0,9)+offset--0-9
+rndAmmo = math.random(minRnd,maxRnd)
+if rnd-offset==0 or rnd-offset==1 then rndAmmo = math.random(minRnd,maxBullet) end--Socom/Famas Ammo
+local wvalue = list[rnd].Value--Current Address Value
+--Weapon
+if rnd~=offset then
+   if string.len(list[rnd].Value)>=4 then list[rnd].Value=0 wvalue=list[rnd].Value end
+   writeSmallInteger(list[rnd].CurrentAddress,wvalue+rndAmmo)--Set Address Value
+end
+--SOCOM Special
+if rnd==offset then
+   if string.len(list[rnd].Value)>=4 then list[rnd].Value=0 end
+   writeSmallInteger("mgsi.exe+38E802",readSmallInteger("mgsi.exe+38E802")+rndAmmo)
+end
+--Max Value Weapons
+local maxWeapon=41
+if list[maxWeapon+rnd-offset].Value<=list[rnd].Value then
+   list[maxWeapon+rnd-offset].Value=list[rnd].Value+1
+end
+--RND String
+local itemName=54 --+Item Name Offset Cigs/Scope
+local weaponName=77 --Weapon Offset
+rndName=list[rnd+weaponName-offset].Value.." X "..rndAmmo--Item Name X Ammo-1
+emptyString=string.rep(" ",16)
+writeString("00658040",string.rep(" ",16))--Reset String
+writeString("00658040",rndName)
+
+{$asm}
+originalcode:
+mov cx,[eax+mgsi.exe+38E802]//Added
+mov [eax+mgsi.exe+38E802],cx
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+4D6E1:
+jmp newmem
+nop 2
+returnhere:
+
+[DISABLE]
+dealloc(newmem)
+"mgsi.exe"+4D6E1:
+mov [eax+mgsi.exe+38E802],cx
+//Alt: db 66 89 88 02 E8 78 00
