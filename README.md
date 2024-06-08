@@ -6,10 +6,9 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
 - Can be activated/deactivated anytime, but I would suggest to let it activated during play.
 - If no pickup text window visible, maybe try the in windowed instead of fullscreen.
 
-![mgsr1](https://user-images.githubusercontent.com/110473739/200180648-4c2b8633-8f7b-48a2-81da-f4322025265c.gif)
-![mgsr2](https://user-images.githubusercontent.com/110473739/200182692-f0dfad0f-b495-404f-a05a-645a73f4fdd7.gif)
-![mgsr3](https://user-images.githubusercontent.com/110473739/200182695-faac1141-7db9-4afc-8ffb-4af3d2e306ff.gif)
 ![MGRnd0](https://github.com/Great0ne/MGS1-PC-Randomizer/assets/110473739/87be2e72-755a-4049-ac34-54712d729313)
+![MGRnd1](https://github.com/Great0ne/MGS1-PC-Randomizer/assets/110473739/68a1c876-33ae-44f8-80b8-044acccb2a0f)
+![MGRnd2](https://github.com/Great0ne/MGS1-PC-Randomizer/assets/110473739/7dafb3c8-761a-44bc-9528-272a1356b302)
 
 # Randomizing what and how ?
 Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if it can make people play a bit more at this gem of a game then it's a job done.
