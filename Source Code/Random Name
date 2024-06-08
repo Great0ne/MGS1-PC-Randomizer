@@ -1,0 +1,106 @@
+[ENABLE]
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+mov esi,[edi+00000118]//Original ESI
+
+{$luacode chk=ESI}
+if syntaxcheck then return end
+
+if rnd~=-1 then
+  local list = getAddressList()
+  --Check Infinite Respawn
+  addr=string.format("%X",getAddress(chk))
+  --Checkbox No Unlimited Respawn
+  if CETrainer.CECheckbox1.Checked == true then
+    if addr=="8EB186" or addr=="8D82B4" or--Respawn Ocelot/Tank
+       addr=="8E0290" or addr=="8E01CD" or addr=="8E010D" or--Respawn Fox
+       addr=="8F37CF" or addr=="8F388A" or--Respawn Mantis
+       addr=="8F3026" or addr=="8F30CF" or--Respawn Wolf 1
+       addr=="8D6AE8" or addr=="8E5473" or addr=="8E5575" or--Respawn Hind/Wolf 2
+       addr=="8D4963" or addr=="8D4A10" or addr=="8D480B" or--Respawn Raven
+       addr=="8E580B" or addr=="8E58BC" or addr=="8E596D" or
+       addr=="8E5A45" or addr=="8E5B1B" then--Respawn Rex
+       emptyString=string.rep(" ",16)
+       writeString("00658040",string.rep(" ",16))--Reset String
+       writeString("00658040","NO RESPAWN")
+       --Weapon
+       local offset = 27
+       local wvalue = list[rnd].Value--Current Address Value
+       if rnd~=offset then
+          writeSmallInteger(list[rnd].CurrentAddress,wvalue-rndAmmo)--Set Address Value
+       end
+       --SOCOM Special
+       if rnd==offset then
+          writeSmallInteger("mgsi.exe+38E802",readSmallInteger("mgsi.exe+38E802")-rndAmmo)
+       end
+    end
+  end
+  --Max Value Rations/Medicine/Diazepam
+  if ch==1 then
+    local maxItem=38
+    local offset=13
+    if rnd>=13 and rnd<=15 and list[maxItem+rnd-offset].Value<=list[rnd+2].Value then
+       list[maxItem+rnd-offset].Value=list[rnd+2].Value+1
+    end
+  end
+  --Max Value Weapons
+  if ch==2 then
+    local maxWeapon=41
+    local offset=27
+    if list[maxWeapon+rnd-offset].Value<=list[rnd].Value then
+       list[maxWeapon+rnd-offset].Value=list[rnd].Value+1
+    end
+  end
+
+  rnd=-1
+end
+{$asm}
+mov esi,00658040
+
+originalcode:
+//mov esi,[edi+00000118]
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+4D149:
+jmp newmem
+nop
+returnhere:
+ 
+[DISABLE]
+dealloc(newmem)
+"mgsi.exe"+4D149:
+mov esi,[edi+00000118]
+//Alt: db 8B B7 18 01 00 00
+//----------------------------------------------------------------------------
+//----------------------------------------------------------------------------
+[ENABLE]
+alloc(newmem,2048)
+label(returnhere)
+label(originalcode)
+label(exit)
+
+newmem:
+
+originalcode:
+mov esi,00658040
+//mov esi,[edi+0000011C]
+
+exit:
+jmp returnhere
+
+"mgsi.exe"+4D151:
+jmp newmem
+nop
+returnhere:
+
+[DISABLE]
+dealloc(newmem)
+"mgsi.exe"+4D151:
+mov esi,[edi+0000011C]
+//Alt: db 8B B7 1C 01 00 00
