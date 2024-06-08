@@ -1,6 +1,5 @@
 //"mgsi.exe"+4D662
 [ENABLE]
-//code from here to '[DISABLE]' will be used to enable the cheat
 alloc(newmem,2048)
 label(returnhere)
 label(originalcode)
@@ -11,9 +10,9 @@ saveW=readSmallInteger("mgsi.exe+38E802")--Init Socom Value
 saveM=readSmallInteger("mgsi.exe+38E816")--Init Socom Max
 
 {$asm}
-newmem: //this is allocated memory, you have read,write,execute access
-//place your code here
+newmem:
 mov eax,0//EAX ~= [ESP+04] Forced Pickup Socom
+
 {$luacode nbw=EAX chw=[esp+04]}
 saveW=readSmallInteger("mgsi.exe+38E802")--Save Socom Value
 saveM=readSmallInteger("mgsi.exe+38E816")--Save Socom Max
@@ -26,22 +25,17 @@ ch=math.random(1,2)--Random Item or Weapon
 local list = getAddressList()--local listcheck = (rnd/2)+2
 if ch==1 then--RANDOM ITEM
   rnd = math.random(2,23)--Random Item (No Cigs/Scope) 23*2
-  --Not Bandana/Camo
-  while rnd==10 or rnd==11 do rnd = math.random(2,23) end
-  --Item Already Obtained Reroll
-  if rnd<13 or rnd>15 and rnd~=17 and rnd~=18 then--Not Rations/Medicine/Diazepam/Bomb/IDCard
-    while list[rnd+2].Value == list[2].Value or--While Value == 1
-          rnd==10 or rnd==11 do--Not Bandana/Camo
-          rnd=math.random(2,23)
-    end
-  end
-  --ID Card Already Obtained
   local card=readSmallInteger("mgsi.exe+38E84C")
-  if rnd==17 and card>0 and card<=7 then--IDCard 0
-    while list[rnd+2].Value == list[17+2].Value or--While Value == 1
-          rnd==10 or rnd==11 do--Not Bandana/Camo
-          rnd=math.random(2,23)
-    end
+  --Not Bandana/Camo
+  while rnd==10 or rnd==11 or
+        --Not Rations/Medicine/Diazepam/Bomb/IDCard
+        rnd<13 and list[rnd+2].Value == list[2].Value or--While Value == 1
+        --Item Already Obtained Reroll Not Rations/Medicine/Diazepam/Bomb/IDCard
+        rnd>15 and rnd~=17 and rnd~=18 and list[rnd+2].Value == list[2].Value or
+        --ID Card Already Obtained
+        rnd==17 and card>0 and card<=7 and list[rnd+2].Value == list[17+2].Value or
+        rnd==23 and string.len(list[rnd+3].Value)>1 do --Suppressor again
+        rnd = math.random(2,23)
   end
   --Set Value
   local ivalue = list[rnd+2].Value--Current Address Value
@@ -53,14 +47,11 @@ if ch==1 then--RANDOM ITEM
   if rnd==18 then lvl=math.random(4,10)--Random Bomb Timer
      writeSmallInteger("mgsi.exe+38E84E",lvl)
   end
-  --Max Value Rations/Medicine/Diazepam
-  local maxItem=38
-  if rnd>=13 and rnd<=15 and list[maxItem+rnd-13].Value<list[rnd+2].Value then
-     if rnd==13 then list[maxItem+rnd-13].Value=list[rnd+2].Value-1
-     else list[maxItem+rnd-13].Value=list[rnd+2].Value
-     end
-  end
-  rndName=list[rnd+2].Description--Set PickUp String
+  --RND String
+  local itemName=52 --+Item Name Offset Cigs/Scope
+  rndName=list[rnd+itemName].Value
+  writeString("00658040",string.rep(" ",16))--Reset String
+  writeString("00658040",rndName)
 end
 if ch==2 then--RANDOM WEAPON
   local offset = 27--Item Offset+Cigs/Scope+Weapons
@@ -68,10 +59,13 @@ if ch==2 then--RANDOM WEAPON
   while rnd-offset==nbw do--Same as EAX
         rnd=math.random(0,9)+offset
   end
-  local rndAmmo = math.random(2,4)
-  if rnd-offset==0 or rnd-offset==1 then rndAmmo = math.random(2,15) end--Socom/Famas Ammo
+  rndAmmo = math.random(minRnd,maxRnd)
+  --Socom/Famas Ammo
+  if rnd-offset==0 or rnd-offset==1 then rndAmmo = math.random(minRnd,maxBullet) end
   local wvalue = list[rnd].Value--Current Address Value
+  --Weapon
   if rnd~=offset then
+     if string.len(list[rnd].Value)>=4 then list[rnd].Value=0 wvalue=list[rnd].Value end
      writeSmallInteger(list[rnd].CurrentAddress,wvalue+rndAmmo)--Set Address Value
   end
   --SOCOM Special
@@ -79,14 +73,13 @@ if ch==2 then--RANDOM WEAPON
      if string.len(list[rnd].Value)>=4 then list[rnd].Value=0 end
      writeSmallInteger("mgsi.exe+38E802",readSmallInteger("mgsi.exe+38E802")+rndAmmo)
   end
-  --Max Value Weapons
-  local maxWeapon=41
-  if list[maxWeapon+rnd-offset].Value<list[rnd].Value then
-     list[maxWeapon+rnd-offset].Value=list[rnd].Value end
-  rndName=list[rnd].Description--Set PickUp String
+  --RND String
+  local weaponName=77 --Weapon Offset
+  rndName=list[rnd+weaponName-offset].Value.." X "..rndAmmo
+  emptyString=string.rep(" ",16)
+  writeString("00658040",emptyString)--Reset String
+  writeString("00658040",rndName)
 end
-
-if f then FormPaint(f) end--Call Form
 
 {$asm}
 originalcode:
@@ -100,9 +93,8 @@ jmp returnhere
 jmp newmem
 nop
 returnhere:
-
+ 
 [DISABLE]
-//code from here till the end of the code will be used to disable the cheat
 dealloc(newmem)
 "mgsi.exe"+4D662:
 mov eax,[esp+04]
