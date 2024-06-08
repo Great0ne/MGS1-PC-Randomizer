@@ -1,8 +1,8 @@
-# MGS1 PC Randomizer v1.0
+# MGS1 PC Randomizer v1.1
 Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEngine using LUA/Assembly.
 
 # How to use
-- Launch the game, launch the Trainer, wait for the trainer to recognize mgs process, click Randomize and test it.
+- Launch the game, launch the Trainer, wait for the trainer to recognize mgs process, choose custom name/settings and click Randomize to test it.
 - Can be activated/deactivated anytime, but I would suggest to let it activated during play.
 - If no pickup text window visible, maybe try the in windowed instead of fullscreen.
 
@@ -22,12 +22,12 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   
   The Bomb is received with a timer randomized from 3 to 10 seconds.
   
-  The ID Card is received with it's level randomized from 1 to 7, but will be reset to expected value while progressing the story. 
-- Textbox,
-  I tried to use the ingame text to display the new item instead of the old, it was working until boss fights where the game crash,
-  sadly too much code on the update so I added a textbox which you can move around that will display new items, 
-  not a fan of adding visual elements but it is better than checking your inventory every time.
+  The ID Card is received with it's level randomized from 1 to 7, but will be reset to expected value while progressing the story.
   
+# Updates v1.1
+- The launcher offers possibility to set custom name (7 char max), setting min/max pick up weapons, max pick up bullets (Socom/Famas) and deactivate respawns during boss fights,
+  along other fixes.
+
 # Issues
 - Balancing, 
   there is a 1 out of 2 chances to get item or weapon, which could cause a lack of items with bad luck.
@@ -46,9 +46,16 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   if got randomly before needed, then the rat drop will give it to a null state.
 - (FIXED) Escape Rations,
   picking up rations during escape caused crash if an item was given instead.
-- Display Ingame Pickup,
-  added temporary solution to display randomized pickup with movable transparent window, original ingame display causes crashes
-  during boss fights.
+- (PARTIALLY FIXED) Display Ingame Pickup,
+  pickup name is now displayed in game, but when multiple items are picked only the last is displayed.
+- If no rope has been found after entering Communication Tower 1, you can be blocked after triggering the Hind sequence before rappel
+  because the bottom door will be shut.Finding the rope before the stairs sequence is advised.
+- (FIXED) Pickup Number,
+  pickup number is now displayed in game along the pickup name.
+- (FIXED) Suppressor Respawn,
+  equipping suppressor to Socom was setting back suppressor state to 0, changed the way suppressor nis checked before pickup.
+- (FIXED) Unlimited Respawn,
+  during Boss fights some weapons reappear when the player have no ammo for certain weapons, settings is accessible from launche to enable/disable it.
 
 Feel free to report any encountered issues.
 
