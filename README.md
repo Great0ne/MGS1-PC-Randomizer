@@ -1,4 +1,4 @@
-# MGS1 PC Randomizer v1.1
+# MGS1 PC Randomizer v1.2
 Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEngine using LUA/Assembly.
 
 # How to use
