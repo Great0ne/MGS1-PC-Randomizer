@@ -4,9 +4,8 @@ Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEn
 # How to use
 - Download the EXE file, Launch the game, launch the Trainer, wait for the trainer to recognize mgs process, choose custom name/settings and click Randomize to test it.
 - Can be activated/deactivated anytime, but I would suggest to let it activated during play.
-- If no pickup text window visible, maybe try the in windowed instead of fullscreen.
 
-![MGRnd0](https://github.com/Great0ne/MGS1-PC-Randomizer/assets/110473739/87be2e72-755a-4049-ac34-54712d729313)
+![MGRnd0](https://github.com/user-attachments/assets/48d75889-f260-4906-ab1c-054bc61e6369)
 ![MGRnd1](https://github.com/Great0ne/MGS1-PC-Randomizer/assets/110473739/68a1c876-33ae-44f8-80b8-044acccb2a0f)
 ![MGRnd2](https://github.com/Great0ne/MGS1-PC-Randomizer/assets/110473739/7dafb3c8-761a-44bc-9528-272a1356b302)
 
@@ -25,8 +24,19 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   The ID Card is received with it's level randomized from 1 to 7, but will be reset to expected value while progressing the story.
   
 # Updates v1.1
-- The launcher offers possibility to set custom name (7 char max), setting min/max pick up weapons, max pick up bullets (Socom/Famas) and deactivate respawns during boss fights,
-  along other fixes.
+V1.2 : 
+  - setting pickup type (item/both/weapon) for each 4 pickup objects
+  - pickup alert trigger chance
+  - pickup sneeze chance & sneeze timer min
+  - timer bomb timer min/max
+  - every item/weapon pickup chance
+  - fix pickup with full inventory
+V1.1 :
+  - custom name (7 char max)
+  - setting min/max pickup weapons
+  - max pick up bullets (Socom/Famas)
+  - deactivate respawns during boss fights
+  - other fixes.
 
 # Issues
 - Balancing, 
@@ -52,7 +62,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   because the bottom door will be shut.Finding the rope before the stairs sequence is advised.
 - (FIXED) Pickup Number,
   pickup number is now displayed in game along the pickup name.
-- (FIXED) Suppressor Respawn,
+- (PARTIALLY FIXED) Suppressor Respawn,
   equipping suppressor to Socom was setting back suppressor state to 0, changed the way suppressor nis checked before pickup.
 - (FIXED) Unlimited Respawn,
   during Boss fights some weapons reappear when the player have no ammo for certain weapons, settings is accessible from launche to enable/disable it.
@@ -60,7 +70,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
 Feel free to report any encountered issues.
 
 # Credits
-Credits to Denezhou on the fearlessrevolution forums for the MGS1 CheatTable which made me gain a lot of time.
+Credits to Denezhou on the fearlessrevolution forums for the MGS1 CheatTable which made me gain a lot of time, and to Gear2 for his cheattable which the trigger alert is copied.
 
 # Disclaimer
 This is not a commercial project. It is not affilated with Konami. It doesnt endorse piracy in any form. You need to own a PC version of the game to play this mod. All copyrighted content belongs to their respective owners and may not be illegally distributed.
