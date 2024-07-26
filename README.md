@@ -23,15 +23,14 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   
   The ID Card is received with it's level randomized from 1 to 7, but will be reset to expected value while progressing the story.
   
-# Updates v1.1
-V1.2 : 
+# Update v1.2
   - setting pickup type (item/both/weapon) for each 4 pickup objects
   - pickup alert trigger chance
   - pickup sneeze chance & sneeze timer min
   - timer bomb timer min/max
   - every item/weapon pickup chance
   - fix pickup with full inventory
-V1.1 :
+# Update v1.1
   - custom name (7 char max)
   - setting min/max pickup weapons
   - max pick up bullets (Socom/Famas)
