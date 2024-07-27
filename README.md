@@ -38,7 +38,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   - other fixes.
 
 # Issues
-- (FIXED) Crash Trainer,
+- (FIXED) Trainer Crash,
   some experienced a crash while clicking "Randomize" with the .exe version, a .cetrainer version is available in this case
 - Balancing, 
   there is a 1 out of 2 chances to get item or weapon, which could cause a lack of items with bad luck.
