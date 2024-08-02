@@ -41,7 +41,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
 - Escape Crash,
   after starting the escape jeep sequence, the game crashes, probably because of text problem or last rations pickup
 - Weird Pickup Text,
-  at one point, pickup text add numbers at end, meaning address read/write problems
+  at one point, pickup text add numbers at end, meaning address read/write problems, which can add high amount of pickup, instability
 - (FIXED) Trainer Crash,
   some experienced a crash while clicking "Randomize" with the .exe version, a .cetrainer version is available in this case
 - Balancing, 
