@@ -38,6 +38,10 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   - other fixes.
 
 # Issues
+- Escape Crash,
+  after starting the escape jeep sequence, the game crashes, probably because of text problem or last rations pickup
+- Weird Pickup Text,
+  at one point, pickup text add numbers at end, meaning address read/write problems
 - (FIXED) Trainer Crash,
   some experienced a crash while clicking "Randomize" with the .exe version, a .cetrainer version is available in this case
 - Balancing, 
@@ -65,7 +69,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   pickup number is now displayed in game along the pickup name.
 - (PARTIALLY FIXED) Suppressor Respawn,
   equipping suppressor to Socom was setting back suppressor state to 0, changed the way suppressor nis checked before pickup.
-- (FIXED) Unlimited Respawn,
+- (PARTIALLY FIXED) Unlimited Respawn,
   during Boss fights some weapons reappear when the player have no ammo for certain weapons, settings is accessible from launche to enable/disable it.
 
 Feel free to report any encountered issues.
