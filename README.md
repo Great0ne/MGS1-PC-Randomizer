@@ -22,7 +22,9 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   The Bomb is received with a timer randomized from 3 to 10 seconds.
   
   The ID Card is received with it's level randomized from 1 to 7, but will be reset to expected value while progressing the story.
-  
+# Hotfix v1.2.1
+  - fix escape crash after picking up last rations and going out with jeep
+  - fix numbers appearing end of pickup text
 # Update v1.2
   - setting pickup type (item/both/weapon) for each 4 pickup objects
   - pickup alert trigger chance
@@ -38,9 +40,9 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   - other fixes.
 
 # Issues
-- Escape Crash,
+- (FIXED)Escape Crash,
   after starting the escape jeep sequence, the game crashes, probably because of text problem or last rations pickup
-- Weird Pickup Text,
+- (FIXED)Weird Pickup Text,
   at one point, pickup text add numbers at end, because of the "full" text pickup problem getting copied
 - (FIXED) Trainer Crash,
   some experienced a crash while clicking "Randomize" with the .exe version, a .cetrainer version is available in this case
