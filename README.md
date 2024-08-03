@@ -29,7 +29,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
   - pickup sneeze chance & sneeze timer min
   - timer bomb timer min/max
   - every item/weapon pickup chance
-  - fix pickup with full inventory
+  - partially fixed pickup with full inventory
 # Update v1.1
   - custom name (7 char max)
   - setting min/max pickup weapons
@@ -41,7 +41,7 @@ Since there wasn't any MGS1 randomizer, I made my own, it's not perfect but if i
 - Escape Crash,
   after starting the escape jeep sequence, the game crashes, probably because of text problem or last rations pickup
 - Weird Pickup Text,
-  at one point, pickup text add numbers at end, meaning address read/write problems, which can add high amount of pickup, instability
+  at one point, pickup text add numbers at end, because of the "full" text pickup problem getting copied
 - (FIXED) Trainer Crash,
   some experienced a crash while clicking "Randomize" with the .exe version, a .cetrainer version is available in this case
 - Balancing, 
