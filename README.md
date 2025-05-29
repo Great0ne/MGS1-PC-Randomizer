@@ -1,6 +1,8 @@
 # MGS1 PC Randomizer v1.2.1
 Metal Gear Solid 1 Items/Weapons randomizer for GOG PC version made with CheatEngine using LUA/Assembly.
 
+DISCLAIMER : Be aware that CheatEngine is a memory reading/modifying software which can be seen as a threat, antiviruses may trigger, I would recommend using a specific location out of virus scan for this.
+
 # How to use
 - Download the EXE file, Launch the game, launch the Trainer, wait for the trainer to recognize mgs process, choose custom name/settings and click Randomize to test it.
 - Can be activated/deactivated anytime, but I would suggest to let it activated during play.
